@@ -102,3 +102,9 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# MacOS temp file
+.DS_Store
+
+# Dataset
+dataset/
