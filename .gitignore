@@ -108,3 +108,6 @@ venv.bak/
 
 # Dataset
 dataset/
+
+# Big temp files
+aggregate_game_with_16_features.csv
