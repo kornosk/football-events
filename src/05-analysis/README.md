@@ -1,4 +1,4 @@
-This folder contains code that will be run the CNN model to evaluate the performance of top teams. 
+This folder contains code that will run the CNN model to evaluate the performance of top teams. 
 
 The files are as follows:
 
