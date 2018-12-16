@@ -104,7 +104,7 @@ In this model, we aggregate the comments from commentators of all events that oc
 
 \subsection{Recurrent Neural Networks (RNN)}
 
-In this model, we try to predict the sequence of events that will transpire during the second half of a soccer game using information from the first half. In particular, for each game we look at the first 45 minutes. Each of those minutes in turn consists of a sequence of binary events, such as whether a goal was scored, a foul was committed, a red card given, etc. In this experiment, we create a Long short-term memory (LSTM) model to predict a game’s sequence of events for each minute of the second half using the sequence of events from the first half. We first try to predict whether each of the events occur for each minute of a game, regardless of the team involved. We then double our original event features by creating a separate event attribute dedicated to each team. We train these two models (one with separate events for each team and one without) and predict the sequence of events for each minute of the second half for each game.
+In this model, we try to predict the sequence of events that will transpire during the second half of a soccer game using information from the first half. In particular, for each game we look at the first 45 minutes. Each of those minutes in turn consists of a sequence of binary events, such as whether a goal was scored, a foul was committed, a red card given, etc. In this experiment, we create a Long short-term memory (LSTM) model to predict a game’s sequence of events for each minute of the second half using the sequence of events from the first half. First, we try to predict whether each of the events occur for each minute of a game, regardless of the team involved. We then consider each team in which we double our original event features by creating a separate event attribute dedicated to each team. We train these two models (one with separate events for each team and one without) and predict the sequence of events for each minute of the second half for each game.
 
 \subsection{Ensemble Model: Combining all models}
 
@@ -114,7 +114,7 @@ The final experiment is to combine the separate models by adding the new feature
 
 From Table~\ref{seq-result-table}, the LSTM models achieve good performances. Therefore, by after adding the RNN features to the ANN model, we could get higher accuracy for the ensemble model compared to the CNN model. Moreover, better results could be obtained if we make predictions only for the top teams as shown in Figure~\ref{acc-figure}.
 
-The less teams we predict, the better results we could get. From figure below, we also make experiments for different time periods as demonstrated in Figure~\ref{min-acc-figure}. If we use the event information of a longer time period, we could get more accurate predictions.
+The less teams we predict, the better results we could get. From figure below, we also make experiments for different time periods as demonstrated in Figure~\ref{min-acc-figure}. If we use the event information of a longer time period, we could get more accurate predictions. Below, we see the results of the Ensemble ANNs.
 
 \begin{table}[h!]
 \begin{center}
